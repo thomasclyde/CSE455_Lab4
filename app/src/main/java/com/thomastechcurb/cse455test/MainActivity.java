@@ -4,14 +4,19 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
-
+    private Button onClickMe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        onClickMe = (Button) findViewById(R.id.click_me_button);
     }
 
 
@@ -35,5 +40,10 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickMe(View view) {
+        String outputstring = "This is my first Android App!";
+        Toast.makeText(this, outputstring, Toast.LENGTH_LONG).show();
     }
 }
